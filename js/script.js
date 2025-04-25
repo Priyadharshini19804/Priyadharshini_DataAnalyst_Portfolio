@@ -173,63 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     animateSkillBars();
     animateCounters();
 
-    // Contact Form Submission
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Get the submit button
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                // Send the form data to the server
-                const response = await fetch('/api/send-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name,
-                        email,
-                        subject,
-                        message
-                    })
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    // Display success message
-                    alert('Thank you for your message! I will get back to you soon.');
-                    
-                    // Reset form
-                    contactForm.reset();
-                } else {
-                    throw new Error(data.message || 'Failed to send message');
-                }
-            } catch (error) {
-                console.error('Error sending message:', error);
-                alert('Sorry, there was an error sending your message. Please try again later.');
-            } finally {
-                // Reset button state
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
+    // Contact Form - Now handled by FormSubmit.co
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
