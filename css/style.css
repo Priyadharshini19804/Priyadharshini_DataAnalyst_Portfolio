@@ -519,10 +519,15 @@ header.scrolled .hamburger span {
     justify-content: center;
 }
 
-.profile-picture svg {
+.profile-img {
     width: 80%;
     height: auto;
-    animation: float 6s ease-in-out infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    z-index: 1;
+    animation: float 6s ease-in-out infinite, morphing 10s ease-in-out infinite;
+    box-shadow: var(--shadow-lg);
 }
 
 .profile-shape {
@@ -637,11 +642,19 @@ header.scrolled .hamburger span {
 
 .about-image {
     width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.about-image svg {
+.about-profile-img {
     width: 100%;
+    max-width: 350px;
     height: auto;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
     animation: morphing 10s ease-in-out infinite;
 }
 
