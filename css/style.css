@@ -66,6 +66,34 @@
     --container-width: 1200px;
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    /* Primary Colors */
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --primary-light: #1e5f88;
+    --primary-bg: #1e2a38;
+    
+    /* Text Colors */
+    --text-dark: #f0f0f0;
+    --text-medium: #d0d0d0;
+    --text-light: #a0a0a0;
+    
+    /* Background Colors */
+    --bg-light: #2c3e50;
+    --bg-white: #1a2530;
+    --bg-dark: #111;
+    
+    /* Border Colors */
+    --border-color: #444;
+    --border-dark: #555;
+    
+    /* Shadow */
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.3);
+    --shadow-md: 0 5px 15px rgba(0,0,0,0.3);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.3);
+}
+
 /* ============================== */
 /*        BASE/RESET STYLES       */
 /* ============================== */
@@ -326,6 +354,78 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    opacity: 0;
+    position: absolute;
+}
+
+.switch-label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled .switch-label {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.switch-label i {
+    color: var(--text-white);
+    position: absolute;
+    top: 7px;
+    z-index: 1;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+header.scrolled .switch-label i {
+    color: var(--text-dark);
+}
+
+.fa-sun {
+    left: 10px;
+}
+
+.fa-moon {
+    right: 10px;
+}
+
+.slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-switch:checked + .switch-label .slider {
+    transform: translateX(30px);
+}
+
+.theme-switch:checked + .switch-label .fa-sun {
+    color: var(--text-light);
+}
+
+.theme-switch:not(:checked) + .switch-label .fa-moon {
+    color: var(--text-light);
 }
 
 .logo h1 {
@@ -1610,8 +1710,17 @@ footer .social-links a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        align-items: center;
+    }
+    
     .hamburger {
         display: block;
+    }
+    
+    .theme-toggle {
+        margin-left: 1rem;
     }
     
     .menu {
