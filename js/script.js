@@ -135,23 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // Counter Animation
-    const counters = document.querySelectorAll('.counter');
-    
-    const animateCounters = () => {
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const current = parseInt(counter.innerText);
-            const increment = target / 100;
-            
-            if (isElementInViewport(counter) && current < target) {
-                counter.innerText = Math.ceil(current + increment);
-                setTimeout(animateCounters, 20);
-            } else if (current > target) {
-                counter.innerText = target;
-            }
-        });
-    };
+    // Counter Animation section removed (not used)
 
     // Utility function to check if element is in viewport
     function isElementInViewport(el) {
@@ -166,13 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         animateCircleProgress();
         animateSkillBars();
-        animateCounters();
     });
 
     // Run animations on initial load
     animateCircleProgress();
     animateSkillBars();
-    animateCounters();
 
     // Contact Form - Now handled by FormSubmit.co
 
