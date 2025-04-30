@@ -667,10 +667,13 @@ header.scrolled .hamburger span {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(52, 152, 219, 0.2);
     color: var(--text-white);
     font-size: var(--fs-lg);
     transition: all var(--transition-fast);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 .social-icons a:hover {
@@ -1688,13 +1691,13 @@ header.scrolled .hamburger span {
     color: var(--text-medium);
 }
 
-.social-links {
+.social-links, .contact-social-links {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
 }
 
-.social-links a {
+.social-links a, .contact-social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1707,7 +1710,7 @@ header.scrolled .hamburger span {
     transition: all var(--transition-fast);
 }
 
-.social-links a:hover {
+.social-links a:hover, .contact-social-links a:hover {
     background-color: var(--primary-color);
     color: var(--text-white);
     transform: translateY(-3px);
