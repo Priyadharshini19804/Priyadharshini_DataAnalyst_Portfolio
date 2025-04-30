@@ -6,7 +6,7 @@
     --primary-color: #3498db;
     --primary-dark: #2980b9;
     --primary-light: #a3d0f5;
-    --primary-bg: #f0f9ff;
+    --primary-bg: #e0f0ff;
     
     /* Secondary Colors */
     --secondary-color: #2c3e50;
@@ -26,8 +26,8 @@
     --text-white: #fff;
     
     /* Background Colors */
-    --bg-light: #f8f9fa;
-    --bg-white: #fff;
+    --bg-light: #f0f7ff;
+    --bg-white: #e8f4ff;
     --bg-dark: #222;
     
     /* Border Colors */
@@ -1101,6 +1101,10 @@ header.scrolled .hamburger span {
 
 .skill-item {
     width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
 }
 
 .skill-info {
@@ -1382,9 +1386,9 @@ header.scrolled .hamburger span {
 }
 
 .project-card {
-    background-color: var(--bg-white);
+    background-color: #ffffff;
     border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -1719,9 +1723,9 @@ header.scrolled .hamburger span {
 .contact-form {
     width: 55%;
     padding: 2rem;
-    background-color: var(--bg-light);
+    background-color: var(--bg-white);
     border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
 }
@@ -1741,7 +1745,7 @@ form textarea {
     padding: 1rem 1rem 1rem 3rem;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    background-color: var(--bg-white);
+    background-color: #ffffff;
     font-size: var(--fs-md);
     transition: border-color var(--transition-fast);
 }
