@@ -1552,36 +1552,7 @@ header.scrolled .hamburger span {
     color: var(--text-light);
 }
 
-.counter-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.counter-item {
-    text-align: center;
-}
-
-.counter-item i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.counter {
-    font-size: var(--fs-3xl);
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-}
-
-.counter-item h3 {
-    font-size: var(--fs-md);
-    font-weight: 600;
-    color: var(--text-medium);
-}
+/* Counter section removed */
 
 /* ============================== */
 /*        CONTACT SECTION         */
@@ -2032,13 +2003,7 @@ footer .social-links a:hover {
         width: 100%;
     }
     
-    .counter-container {
-        gap: 1.5rem;
-    }
-    
-    .counter-item {
-        width: 45%;
-    }
+    /* Counter styles removed */
 }
 
 @media screen and (max-width: 576px) {
@@ -2046,15 +2011,7 @@ footer .social-links a:hover {
         grid-template-columns: 1fr;
     }
     
-    .counter-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .counter-item {
-        width: 100%;
-        margin-bottom: 2rem;
-    }
+    /* Counter styles removed */
     
     .footer-bottom {
         flex-direction: column;
