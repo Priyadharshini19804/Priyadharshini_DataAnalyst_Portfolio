@@ -958,24 +958,108 @@ header.scrolled .hamburger span {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(52, 152, 219, 0.07) 20px, rgba(52, 152, 219, 0.07) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(52, 152, 219, 0.07) 20px, rgba(52, 152, 219, 0.07) 40px);
-    animation: skillsBackgroundMove 15s linear infinite;
-    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.97);
+    z-index: 0;
 }
 
+/* Create multiple bubbles for the skills section background */
 .skills::after {
-    content: '';
+    display: none; /* Hide the previous gradient */
+}
+
+.skills {
+    position: relative;
+}
+
+.skill-bubble {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(52, 152, 219, 0.08) 0%, rgba(52, 152, 219, 0) 70%);
     border-radius: 50%;
-    left: 30%;
-    top: 30%;
-    animation: pulse 8s ease-in-out infinite;
+    background: rgba(52, 152, 219, 0.1);
+    box-shadow: inset 0 0 10px rgba(52, 152, 219, 0.2);
     z-index: 0;
+    animation: float-skill-bubble 20s infinite ease-in-out;
+}
+
+.skill-bubble:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    left: 10%;
+    top: 15%;
+    animation-duration: 22s;
+    animation-delay: 0s;
+}
+
+.skill-bubble:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    left: 20%;
+    top: 40%;
+    animation-duration: 18s;
+    animation-delay: 2s;
+}
+
+.skill-bubble:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    left: 75%;
+    top: 25%;
+    animation-duration: 25s;
+    animation-delay: 1s;
+}
+
+.skill-bubble:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    left: 85%;
+    top: 60%;
+    animation-duration: 15s;
+    animation-delay: 3s;
+}
+
+.skill-bubble:nth-child(5) {
+    width: 100px;
+    height: 100px;
+    left: 40%;
+    top: 70%;
+    animation-duration: 20s;
+    animation-delay: 4s;
+}
+
+.skill-bubble:nth-child(6) {
+    width: 70px;
+    height: 70px;
+    left: 60%;
+    top: 85%;
+    animation-duration: 17s;
+    animation-delay: 5s;
+}
+
+.skill-bubble:nth-child(7) {
+    width: 90px;
+    height: 90px;
+    left: 5%;
+    top: 80%;
+    animation-duration: 23s;
+    animation-delay: 6s;
+}
+
+@keyframes float-skill-bubble {
+    0%, 100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) scale(1.05);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(0) translateX(20px) scale(1);
+        opacity: 0.7;
+    }
+    75% {
+        transform: translateY(20px) translateX(10px) scale(0.95);
+        opacity: 0.8;
+    }
 }
 
 @keyframes skillsBackgroundMove {
