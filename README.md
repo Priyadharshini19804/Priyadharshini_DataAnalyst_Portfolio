@@ -48,7 +48,7 @@ Hi there! 👋 I'm Priyadharshini S M, a passionate fresher excited to embark on
 
 ## 📬 Connect With Me
 
-- 🌐 [Portfolio](https://priyadharshinism-portfolio.vercel.app/)  
+- 🌐 [Portfolio](https://priyadharshini-data-analyst-portfolio.vercel.app/)  
 - 💼 [LinkedIn](https://www.linkedin.com/in/priyadharshinism08/)  
 - 🐦 [Twitter](https://x.com/priya19082004)  
 - 📧 Email: shreesakthi2004@gmail.com  
