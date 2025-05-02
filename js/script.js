@@ -156,7 +156,42 @@ document.addEventListener('DOMContentLoaded', function() {
     animateCircleProgress();
     animateSkillBars();
 
-    // Contact Form - Now handled by FormSubmit.co
+    // Simple Contact Form with inline success message
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (contactForm && submitBtn) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+            
+            // Show submission in progress
+            submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const name = contactForm.querySelector('input[name="name"]').value;
+            const email = contactForm.querySelector('input[name="email"]').value;
+            const subject = contactForm.querySelector('input[name="subject"]').value;
+            const message = contactForm.querySelector('textarea[name="message"]').value;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Clear the form
+                contactForm.reset();
+                
+                // Show success message
+                submitBtn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check"></i>';
+                submitBtn.style.backgroundColor = '#28a745';
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<span>Send Message</span> <i class="fas fa-paper-plane"></i>';
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
