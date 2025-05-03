@@ -263,29 +263,84 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-white);
+    background-color: var(--secondary-dark);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
     transition: opacity var(--transition-medium);
+    animation: fadeOut 1s ease-in-out 5s forwards; /* 7 second delay before fadeout */
 }
 
 .loader {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.loader svg {
-    animation: rotate 2s linear infinite;
+.loader-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-.loader .progress {
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
-    stroke-linecap: round;
-    animation: dash 1.5s ease-in-out infinite;
+.circle-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top-color: #3498db; /* Blue color from the image */
+    border-right-color: #3498db;
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+}
+
+.circle-inner {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 70%;
+    height: 70%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+    border-right-color: #3498db;
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite reverse;
+}
+
+.loader-text {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 700;
+    color: #3498db;
+    z-index: 2;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 @keyframes rotate {
@@ -296,13 +351,13 @@ section {
 
 @keyframes dash {
     0% {
-        stroke-dashoffset: 150;
+        stroke-dashoffset: 160;
     }
     50% {
         stroke-dashoffset: 0;
     }
     100% {
-        stroke-dashoffset: 150;
+        stroke-dashoffset: 160;
     }
 }
 

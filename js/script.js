@@ -2,12 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // Preloader
+    // The CSS animation will handle the fade out after delay
     window.addEventListener('load', function() {
-        const preloader = document.querySelector('.preloader');
-        preloader.style.opacity = '0';
+        // Preloader is now handled by CSS animation with delay
+        // We'll just ensure it's completely hidden after the animation
         setTimeout(function() {
+            const preloader = document.querySelector('.preloader');
             preloader.style.display = 'none';
-        }, 500);
+        }, 8000); // 8 seconds (7s delay + 1s fade out)
     });
 
     // Header scroll effect
